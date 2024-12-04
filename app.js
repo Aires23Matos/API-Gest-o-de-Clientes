@@ -5,6 +5,7 @@ dotenv.config();
 import express  from 'express';
 import './src/database'
 import userRoutes from './src/routes/userRoutes';
+import moradaRoutes from './src/routes/moradaRoutes';
 class App {
   constructor(){
     this.app = express();
@@ -20,6 +21,7 @@ class App {
   routes(){
     this.app.use('/', homeRoutes);
     this.app.use('/users/', userRoutes);
+    this.app.use('/moradas/', moradaRoutes);
   }
 }
 
