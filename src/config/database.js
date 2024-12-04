@@ -18,7 +18,7 @@ module.exports = {
     'updatedAt': 'updated_at'
   },
   dialectOptions: {
-    timezone: 'África_Ocidental/Luanda',
+    timezone: 'Africa/Luanda', // Use um timezone válido
   },
-  timezone: 'África_Ocidental/Luanda'
+  timezone: 'Africa/Luanda',
 }
