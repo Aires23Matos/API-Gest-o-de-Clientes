@@ -2,10 +2,7 @@ import Morada from "../models/Morada";
 class MoradaController{
   async store(req, res){
    try{
-    const novoUsuario = await Morada.create({
-      provincia: 'Luanda',
-      endereco: 'Viana/estalagem'
-    })
+    const novoUsuario = await Morada.create(req.body);
     res.json(novoUsuario);
   }catch(e){
     console.log(e);
