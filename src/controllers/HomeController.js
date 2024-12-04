@@ -1,8 +1,11 @@
+import Cliente from "../models/cliente";
 class HomeController{
-  index(req, res){
-    res.json({
-      tudoCerto:true
+  async index(req, res){
+    const novoCliente = await Cliente.create({
+      nome: 'Pedro',
+      nif: 999999999,
     })
+    res.json(novoCliente);
   }
 }
 

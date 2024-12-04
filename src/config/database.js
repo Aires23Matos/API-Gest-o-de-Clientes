@@ -12,10 +12,10 @@ module.exports = {
   //para saber quando m registro foi criado na tabela e quando um registro foi atualizado na tabela
   define: {
     timestamps: true,
-    underdcored: true,
-    undefinedAll: true,
-    'createdAt': 'creates_at',
-    'updatedAt': 'updated_at'
+    underscored: true,
+    underscoredAll: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   },
   dialectOptions: {
     timezone: 'Africa/Luanda', // Use um timezone válido

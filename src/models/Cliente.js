@@ -5,7 +5,7 @@ export default class Cliente extends Model {
   static init(sequelize){
     super.init({
       nome: Sequelize.STRING,
-      nif:Sequelize.INTEGER,
+      nif: Sequelize.INTEGER,
     }, {
     sequelize,
   });
