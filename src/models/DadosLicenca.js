@@ -1,55 +1,103 @@
-import Sequelize,{Model} from "sequelize";
-
+import Sequelize, {Model} from "sequelize";
 
 export default class DadosLicenca extends Model {
   static init(sequelize){
-    super.init({
-      nome: Sequelize.STRING,
-      tecnico: Sequelize.STRING,
-      data_da_instalacao: Sequelize.DATE,
-      hora_de_formacao: Sequelize.TIME,
-      validade_em_mes: {
-        type: Sequelize.INTEGER,
-        validate: {
-          isInt:{
-            msg: 'O Validade em mes deve conter apenas números inteiros.'
+    super.init(
+      {
+        tecnico: {
+          type: Sequelize.STRING,
+          defaultValue: '',
+            validate: {
+              len: {
+                args: [3, 255],
+              msg: 'Nome  do tecnico precisa ter entre 3 e 255 caracteres.'
+              }
+            }
+        },
+        data_da_instalacao:{
+          type:  Sequelize.STRING,
+          defaultValue: '',
+          validate: {
+            len: {
+              args: [3, 255],
+            msg: 'Data de intalação precisa ter entre 3 e 255 caracteres.'
+            }
           }
-        }
-      },
-      data_da_ativacao: Sequelize.DATE,
-      data_da_expiracao: Sequelize.DATE,
-      estado_da_licenca: {
-        type: Sequelize.STRING,
-        validate:{
-          validate:{
-            len :{
-              args: [9,9],
-              msg: 'O Estado deve ter exatamente 9 dígitos.'
+        },
+        hora_de_formacao: {
+          type: Sequelize.INTEGER,
+          defaultValue: '',
+          validate: {
+            isInt: {
+              msg: 'Apenas é permitidos números inteiros'
+            }
+          }
+
+        },
+        validade_em_mes: {
+          type: Sequelize.INTEGER,
+          defaultValue: '',
+          validate: {
+            isNumeric:{
+              msg: 'Campo Validade em mes Deve ser inserido apenas números inteiros'
+            }
+          }
+        },
+        data_da_ativacao: {
+          type: Sequelize.STRING,
+          defaultValue: '',
+          validate: {
+            len: {
+              args: [3, 255],
+              msg: 'Data de ativação  precisa ter entre 3 e 255 caracteres.'
+            }
+             }
+        },
+        data_da_expiracao: {
+          type: Sequelize.STRING,
+          defaultValue: '',
+          validate: {
+            len: {
+              args: [3, 255],
+              msg: 'Data de expiração precisa ter entre 3 e 255 caracteres.'
+
+            }
+           }
+        },
+        estado_da_licenca:{
+          type: Sequelize.STRING,
+          defaultValue: '',
+          validate: {
+           len: {
+             args: [3, 255],
+              msg: 'estado da licença precisa ter entre 3 e 255 caracteres.'
+           }
+          }
+        },
+        conta_pago: {
+          type: Sequelize.BOOLEAN,
+          validate: {
+            len: {
+              args: [2, 1000],
+              msg: 'não foi aceite o volor inserido'
+            },
+            isFloat: {
+              msg: 'Campo conta paga de ser inserido apenas valores reais'
+            }
+          }
+        },
+        valor_pago: {
+          type: Sequelize.DECIMAL,
+          validate: {
+            isDecimal: {
+              msg: 'Campo valor pago deve ser inserido apenas valores decimais'
             }
           }
         }
-      },
-      conta_pago: {
-        type: Sequelize.BOOLEAN,
-        validate: {
-          isNumeric:{
-            msg: 'O Conta Pago deve conter apenas números.'
-          }
-        }
-      },
-      valor_pago: {
-        type: Sequelize.DECIMAL(10, 2),
-        validate :{
-          isDecimal: {
-             msg: 'O Valor Pago deve conter apenas números.'
-          }
-        }
-      },
-    }, {
-    sequelize,
-  });
-  return this;
+      },{
+        timestamps: false,
+        sequelize,
+      });
+    return this;
   }
-}
-
-
+};

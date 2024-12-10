@@ -1,7 +1,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('dados_da_licenca',
+    await queryInterface.createTable('dados_licencas',
       {
         id:{
           type: Sequelize.INTEGER,
@@ -14,11 +14,11 @@ module.exports = {
           allowNull: false,
         },
         data_da_instalacao: {
-          type:Sequelize.DATE,
+          type:Sequelize.STRING,
           allowNull: false,
         },
         hora_de_formacao:{
-          type: Sequelize.TIME,
+          type: Sequelize.INTEGER,
           allowNull: false,
         },
         validade_em_mes:{
@@ -26,11 +26,11 @@ module.exports = {
           allowNull: false,
         },
         data_da_ativacao: {
-          type:Sequelize.DATE,
+          type:Sequelize.STRING,
           allowNull: false,
         },
         data_da_expiracao: {
-          type:Sequelize.DATE,
+          type:Sequelize.STRING,
           allowNull: false,
         },
         estado_da_licenca: {
@@ -42,7 +42,7 @@ module.exports = {
           allowNull: false,
         },
         valor_pago: {
-          type: Sequelize.DECIMAL(10, 2),
+          type: Sequelize.DECIMAL,
           allowNull: false,
         },
       }
@@ -51,7 +51,7 @@ module.exports = {
   },
 
   async down (queryInterface) {
-     await queryInterface.dropTable('dados_da_licenca');
+     await queryInterface.dropTable('dados_licencas');
   }
 };
 

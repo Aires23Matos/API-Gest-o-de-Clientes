@@ -25,7 +25,7 @@ class App {
     this.app.use('/users/', userRoutes);
     this.app.use('/moradas/', moradaRoutes);
     this.app.use('/contatos/', contatosRoutes);
-    this.app.use('/dadoslicenca/', dadosLicencaRoutes);
+    this.app.use('/dadoslicencas/', dadosLicencaRoutes);
   }
 }
 
