@@ -38,7 +38,7 @@ module.exports = {
           allowNull: false,
         },
         conta_pago: {
-          type:Sequelize.BOOLEAN,
+          type:Sequelize.FLOAT(10, 2),
           allowNull: false,
         },
         valor_pago: {

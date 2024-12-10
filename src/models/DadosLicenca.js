@@ -75,13 +75,9 @@ export default class DadosLicenca extends Model {
           }
         },
         conta_pago: {
-          type: Sequelize.BOOLEAN,
+          type: Sequelize.FLOAT(10, 3),
           validate: {
-            len: {
-              args: [2, 1000],
-              msg: 'não foi aceite o volor inserido'
-            },
-            isFloat: {
+            isDecimal: {
               msg: 'Campo conta paga de ser inserido apenas valores reais'
             }
           }
