@@ -8,6 +8,7 @@ import userRoutes from './src/routes/userRoutes';
 import moradaRoutes from './src/routes/moradaRoutes';
 import contatosRoutes from './src/routes/contatosRoutes';
 import dadosLicencaRoutes from './src/routes/dadosLicencaRoutes';
+import responsavelRoutes from './src/routes/responsavelRoutes';
 class App {
   constructor(){
     this.app = express();
@@ -26,6 +27,7 @@ class App {
     this.app.use('/moradas/', moradaRoutes);
     this.app.use('/contatos/', contatosRoutes);
     this.app.use('/dadoslicencas/', dadosLicencaRoutes);
+    this.app.use('/responsavel/', responsavelRoutes);
   }
 }
 

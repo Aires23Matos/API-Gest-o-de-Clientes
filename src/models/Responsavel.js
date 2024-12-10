@@ -3,8 +3,12 @@ import Sequelize, {Model} from "sequelize";
 export default class Responsavel extends Model{
   static init(sequelize){
     super.init({
-      nome: Sequelize.STRING,
+      nome: {
+        type: Sequelize.STRING,
+        defaultValue: '',
+      },
       telefone: {
+        defaultValue: '',
         type: Sequelize.INTEGER,
         validate: {
           len: {
@@ -12,12 +16,14 @@ export default class Responsavel extends Model{
              msg: 'Só é permitido números de 9 caraters',
           },
           isInt: {
-            msg: 'Campo telefone deve ser obrigatporio inserir valores inteiros.'
+            msg: 'Campo telefone deve ser obrigatório inserir valores inteiros.'
           }
         }
       },
       email: {
+
         type: Sequelize.STRING,
+        defaultValue: '',
         validate: {
           len: {
             args: [4, 20],
@@ -29,6 +35,7 @@ export default class Responsavel extends Model{
         }
       }
     }, {
+   
       sequelize,
     });
   }

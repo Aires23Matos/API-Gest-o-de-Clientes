@@ -3,6 +3,7 @@ import responsavelController from "../controllers/ReponsavelController";
 
 const router = new Router();
 
-router.get('/', responsavelController.store);
+router.post('/', responsavelController.store);
 
 export default router;
+
