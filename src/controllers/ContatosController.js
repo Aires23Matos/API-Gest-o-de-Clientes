@@ -5,6 +5,7 @@ class ContatosController{
    try{
     const novoContatos = await Contatos.create({
       telefone: 999999999,
+      email: "ddddf@gmail.com",
       web_site: "ww.com"
     });
     res.json(novoContatos);
