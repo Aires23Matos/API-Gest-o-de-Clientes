@@ -1,6 +1,6 @@
 import Cliente from "../models/cliente";
 class DadosLicencaController{
-  async index(req, res){
+  async store(req, res){
     const novoDadoLicenca = await Cliente.create({
     })
     res.json(novoDadoLicenca);
