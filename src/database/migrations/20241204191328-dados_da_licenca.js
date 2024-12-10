@@ -42,7 +42,7 @@ module.exports = {
           allowNull: false,
         },
         valor_pago: {
-          type:Sequelize.Sequelize.DECIMAL(10, 2),
+          type: Sequelize.DECIMAL(10, 2),
           allowNull: false,
         },
       }
