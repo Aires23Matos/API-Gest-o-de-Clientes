@@ -42,7 +42,7 @@ class HomeController{
           errors: ['Cliente não existe'],
         });
       }
-      const novosClientes = Cliente.update(req.body);
+      const novosClientes = cliente.update(req.body);
       return res.json(novosClientes);
     }catch(e){
       return res.status(400).json({
@@ -68,7 +68,7 @@ class HomeController{
         })
       }
       await cliente.destroy();
-      return cliente.json(cliente)
+      return cliente.json(cliente);
     }catch(e){
       return res.status(400).json({
         errors: e.errors.map(err => err.message),
