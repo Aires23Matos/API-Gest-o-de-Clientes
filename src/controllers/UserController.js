@@ -50,7 +50,9 @@ async Update(req, res) {
     const novosDados = user.update(req.body);
     return res.json(novosDados);
   }catch(e){
-    return res.json(null);
+    return res.status(400).json({
+      errors: e.errors.map(err => err.message),
+    });
   }
 }
 }
