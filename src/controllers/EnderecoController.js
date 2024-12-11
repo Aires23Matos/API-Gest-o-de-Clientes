@@ -1,4 +1,3 @@
-import e from "express";
 import Endereco from "../models/endereco";
 
 class EnderecoController {
@@ -14,6 +13,41 @@ class EnderecoController {
       return res.json(enderecos);
     }catch(e){
       return res.json(null);
+    }
+  }
+
+  //Show
+  async show(req, res){
+    try{
+      const {id} = req.params;
+      const endereco = await Endereco.findByPk(id);
+      return res.json(endereco);
+    }catch(e){
+      return res.json(null);
+    }
+  }
+
+  //Update
+  async update(req, res){
+    try{
+      const {id} = req.params;
+      if(!id){
+        return res.status(400).json({
+          errors: ['ID não enviado'],
+        });
+      }
+      const endereco = await Endereco.findByPk(id);
+      if(!endereco){
+        return res.status.json({
+          errors:['Endereco não existe']
+        })
+      }
+      const novosEnderecos = endereco.update(req.body);
+      return res.json(novosEnderecos);
+    }catch(e){
+      return res.status(400).json({
+        errors: e.errors.map(err => err.message),
+      });
     }
   }
 }
