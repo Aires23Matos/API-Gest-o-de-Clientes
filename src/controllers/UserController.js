@@ -20,6 +20,39 @@ async index(req, res) {
     return res.json(null);
   }
 }
+//Show
+async show(req, res) {
+  try{
+    const {id} = req.params;
+    const user = await User.findByPk(id);
+    return res.json(user);
+  }catch(e){
+    return res.json(null);
+  }
+}
+
+//update
+async Update(req, res) {
+  try{
+    const {id} = req.params;
+    if(!id){
+      return res.status(400).json({
+        errors: ['ID não enviado.'],
+      });
+    }
+    const user = await User.findByPk(id);
+    if(!user){
+      return res.status(400).json({
+        errors: ['Usuario não existe'],
+      });
+    }
+
+    const novosDados = user.update(req.body);
+    return res.json(novosDados);
+  }catch(e){
+    return res.json(null);
+  }
+}
 }
 
 export default new UserController();
