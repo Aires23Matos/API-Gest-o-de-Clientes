@@ -11,7 +11,7 @@ module.exports = {
           autoIncrement: true,
           primaryKey: true,
         },
-        nome: {
+        nome_cliente: {
           type:Sequelize.STRING,
           allowNull: false,
         },
