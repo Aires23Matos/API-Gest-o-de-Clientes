@@ -18,15 +18,15 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      Bairro: {
+      bairro: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      Rua_ou_Avenida: {
+      rua_ou_avenida: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      numero_da_Casa: {
+      numero_da_casa: {
         type: Sequelize.STRING,
         allowNull: false,
       },

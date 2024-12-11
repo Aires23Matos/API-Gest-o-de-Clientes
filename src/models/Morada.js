@@ -13,6 +13,7 @@ export default class Morada extends Model {
           }
         }
       },
+
       endereco:{
         type: Sequelize.STRING,
         defaultValue: '',
@@ -23,6 +24,7 @@ export default class Morada extends Model {
         }
        }
       },
+      
     }, {
     sequelize,
   });
