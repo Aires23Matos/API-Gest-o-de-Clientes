@@ -53,7 +53,7 @@ export default class Endereco extends Model{
           }
         }
       },
-
+      
       ponto_de_referencia: {
         type: Sequelize.STRING,
         defaultValue: '',
