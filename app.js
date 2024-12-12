@@ -10,6 +10,7 @@ import contatosRoutes from './src/routes/contatosRoutes';
 import dadosLicencaRoutes from './src/routes/dadosLicencaRoutes';
 import responsavelRoutes from './src/routes/responsavelRoutes';
 import tokenRoutes from './src/routes/tokenRoutes';
+import ederecoRoutes from './src/routes/enderecoRoutes';
 class App {
   constructor(){
     this.app = express();
@@ -30,6 +31,7 @@ class App {
     this.app.use('/contatos/', contatosRoutes);
     this.app.use('/dadoslicencas/', dadosLicencaRoutes);
     this.app.use('/responsavel/', responsavelRoutes);
+    this.app.use('/ederecos/', ederecoRoutes);
   }
 }
 

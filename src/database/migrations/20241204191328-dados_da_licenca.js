@@ -45,8 +45,17 @@ module.exports = {
           type: Sequelize.DECIMAL,
           allowNull: false,
         },
+        cliente_id: {
+          type: Sequelize.INTEGER,
+          allowNull: true,
+          references: {
+            model: 'clientes',
+            key: 'id',
+          },
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE'
+        },
       }
-
     );
   },
 

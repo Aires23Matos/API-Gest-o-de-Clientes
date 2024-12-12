@@ -2,7 +2,7 @@ import Endereco from "../models/endereco";
 
 class EnderecoController {
   async store(req, res){
-    const novoEndereco = await Endereco.create(req.body)
+    const novoEndereco = await Endereco.create(req.body);
     res.json(novoEndereco);
   };
 

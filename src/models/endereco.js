@@ -29,8 +29,10 @@ export default class Endereco extends Model{
         type: Sequelize.STRING,
         defaultValue: '',
         validate: {
-          args: [3, 255],
+         len:{
+           args: [3, 255],
           msg: 'o campo bairro tem que ter 3 a 255 carateres'
+         }
         }
       },
 
@@ -38,8 +40,10 @@ export default class Endereco extends Model{
         type:  Sequelize.STRING,
         defaultValue: '',
         validate: {
-          args: [3, 255],
+          len:{
+            args: [3, 255],
           msg: 'o campo rua ou avenida tem que ter 3 a 255 carateres'
+          }
         }
       },
 
@@ -53,7 +57,7 @@ export default class Endereco extends Model{
           }
         }
       },
-      
+
       ponto_de_referencia: {
         type: Sequelize.STRING,
         defaultValue: '',
