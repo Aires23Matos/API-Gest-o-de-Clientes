@@ -1,6 +1,6 @@
 import Cliente from "../models/cliente";
 import Responsavel from "../models/Responsavel";
-import Endereco from "../models/endereco";
+import Endereco from "../models/Endereco";
 import Contatos from "../models/Contatos";
 import DadosLicenca from "../models/DadosLicenca";
 class HomeController{

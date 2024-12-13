@@ -1,4 +1,4 @@
-import Endereco from "../models/endereco";
+import Endereco from "../models/Endereco";
 
 class EnderecoController {
   async store(req, res){

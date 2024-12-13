@@ -74,6 +74,7 @@ export default class Endereco extends Model{
        }
     },{
       sequelize,
+      timestamps: false
     });
     return this
   }

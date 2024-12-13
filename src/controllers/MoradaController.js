@@ -1,5 +1,5 @@
 import Morada from "../models/Morada";
-import Endereco from "../models/endereco";
+import Endereco from "../models/Endereco";
 class MoradaController{
   async store(req, res){
    try{
@@ -18,13 +18,7 @@ class MoradaController{
   //Index
   async Index(req, res){
     try{
-      const moradas = await Morada.findAll({
-         attributes: ["id", "provincia","endereco"],
-          order: [['id', 'DESC']],
-          include: {
-              model: Endereco,
-          },
-      });
+      const moradas = await Morada.findAll();
       return res.json(moradas);
     }catch(e){
       return res.json(null);

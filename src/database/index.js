@@ -6,7 +6,7 @@ import Morada from "../models/Morada";
 import Contatos from '../models/Contatos';
 import DadosLicenca from "../models/DadosLicenca";
 import Responsavel from "../models/Responsavel";
-import Endereco from "../models/endereco";
+import Endereco from "../models/Endereco";
 
 const models = [Cliente, User, Morada, Contatos, DadosLicenca, Responsavel, Endereco];
 
