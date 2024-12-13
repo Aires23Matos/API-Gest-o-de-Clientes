@@ -1,8 +1,11 @@
 import Morada from "../models/Morada";
+import Endereco from "../models/endereco";
 class MoradaController{
   async store(req, res){
    try{
-    const novoUsuario = await Morada.create(req.body);
+    const {provicia} = req.body;
+    const {cliente_id} = req.body;
+    const novoUsuario = await Morada.create({provicia, cliente_id});
     res.json(novoUsuario);
   }catch(e){
     console.log(e);
@@ -15,7 +18,13 @@ class MoradaController{
   //Index
   async Index(req, res){
     try{
-      const moradas = await Morada.findAll();
+      const moradas = await Morada.findAll({
+         attributes: ["id", "provincia","endereco"],
+          order: [['id', 'DESC']],
+          include: {
+              model: Endereco,
+          },
+      });
       return res.json(moradas);
     }catch(e){
       return res.json(null);

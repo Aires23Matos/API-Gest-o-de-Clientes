@@ -1,4 +1,8 @@
 import Cliente from "../models/cliente";
+import Responsavel from "../models/Responsavel";
+import Morada from "../models/Morada";
+import Contatos from "../models/Contatos";
+import DadosLicenca from "../models/DadosLicenca";
 class HomeController{
   async store(req, res){
     const novoCliente = await Cliente.create(req.body);
@@ -8,7 +12,23 @@ class HomeController{
   //Index
   async index(req, res){
     try{
-      const clientes = await Cliente.findAll();
+      const clientes = await Cliente.findAll({
+        attributes: ["id", "nome_cliente","nif"],
+        order: [['id', 'DESC']],
+        include: [{
+          model: Morada,
+        },
+        {
+          model: Contatos,
+        },
+        {
+          model: Responsavel,
+        },
+        {
+          model: DadosLicenca,
+        },]
+
+      });
       return res.json(clientes);
     }catch(e){
       return res.json(null);

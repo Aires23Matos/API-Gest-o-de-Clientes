@@ -22,6 +22,11 @@ export default class Cliente extends Model {
   });
   return this;
   }
+  static associate(models){
+    this.hasMany(models.Morada,  {foreignKey: 'cliente_id'});
+    this.hasOne(models.Contatos, {foreignKey: 'cliente_id'});
+    this.hasOne(models.DadosLicenca, {foreignKey: 'cliente_id'});
+    this.hasOne(models.Responsavel, {foreignKey: 'cliente_id'});
+  };
 }
-
 

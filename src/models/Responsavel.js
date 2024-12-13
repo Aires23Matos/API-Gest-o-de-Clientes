@@ -21,7 +21,6 @@ export default class Responsavel extends Model{
         }
       },
       email: {
-
         type: Sequelize.STRING,
         defaultValue: '',
         validate: {
@@ -33,10 +32,20 @@ export default class Responsavel extends Model{
             msg: 'Dados inserido não é um email',
           }
         }
-      }
+      },
+       cliente_id: {
+          type: Sequelize.INTEGER,
+          defaultValue: '',
+          validate: {
+            len: {
+              args: [1, 10000],
+              msg: 'A coluna cliente_id Não foi inserido nenhum valor'
+            }
+          }
+       }
     }, {
-   
       sequelize,
     });
+    return this;
   }
 }

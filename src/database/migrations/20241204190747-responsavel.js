@@ -1,7 +1,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('responsavel',
+    await queryInterface.createTable('responsavels',
       {
         id:{
           type: Sequelize.INTEGER,
@@ -24,7 +24,7 @@ module.exports = {
         },
         cliente_id: {
           type: Sequelize.INTEGER,
-          allowNull: true,
+          allowNull: false,
           references: {
             model: 'clientes',
             key: 'id',
@@ -46,7 +46,7 @@ module.exports = {
   },
 
   async down (queryInterface) {
-     await queryInterface.dropTable('responsavel');
+     await queryInterface.dropTable('responsavels');
   }
 };
 

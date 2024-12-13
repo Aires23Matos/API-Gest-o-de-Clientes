@@ -3,7 +3,9 @@ import Contatos from "../models/Contatos";
 class ContatosController{
   async store(req, res){
    try{
-    const novoContatos = await Contatos.create(req.body);
+    const {telefone,email,web_site} = req.body;
+    const {cliente_id} = req.body;
+    const novoContatos = await Contatos.create({telefone,email,web_site,cliente_id});
     res.json(novoContatos);
   }catch(e){
     console.log(e);

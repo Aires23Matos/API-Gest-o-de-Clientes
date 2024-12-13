@@ -76,6 +76,7 @@ export default class DadosLicenca extends Model {
         },
         conta_pago: {
           type: Sequelize.FLOAT(10, 3),
+          defaultValue: '',
           validate: {
             isDecimal: {
               msg: 'Campo conta paga de ser inserido apenas valores reais'
@@ -84,9 +85,20 @@ export default class DadosLicenca extends Model {
         },
         valor_pago: {
           type: Sequelize.DECIMAL,
+          defaultValue: '',
           validate: {
             isDecimal: {
               msg: 'Campo valor pago deve ser inserido apenas valores decimais'
+            }
+          }
+        },
+        cliente_id: {
+          type: Sequelize.INTEGER,
+          defaultValue: '',
+          validate: {
+            len: {
+              args: [1, 10000],
+              msg: 'A coluna cliente_id Não foi inserido nenhum valor'
             }
           }
         }
@@ -96,4 +108,5 @@ export default class DadosLicenca extends Model {
       });
     return this;
   }
+
 };

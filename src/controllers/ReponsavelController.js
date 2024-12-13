@@ -3,7 +3,9 @@ import Responsavel from "../models/Responsavel";
 class ResponsavelController{
   async store(req, res){
     try{
-      const novoResponsavel = await Responsavel.create(req.body);
+      const {nome, telefone, email} = req.body;
+      const {cliente_id} = req.body;
+      const novoResponsavel = await Responsavel.create({nome, telefone, email, cliente_id});
       res.json(novoResponsavel);
     }catch(e){
       console.log(e);

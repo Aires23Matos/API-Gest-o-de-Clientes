@@ -13,7 +13,6 @@ export default class Morada extends Model {
           }
         }
       },
-
       endereco: {
         type: Sequelize.STRING,
         defaultValue: '',
@@ -24,9 +23,22 @@ export default class Morada extends Model {
         }
        }
       },
+       cliente_id: {
+        type: Sequelize.INTEGER,
+       defaultValue: '',
+       validate: {
+        len: {
+          args: [1, 10000],
+          msg: 'A coluna cliente_id Não foi inserido nenhum valor'
+        }
+      }
+       }
     }, {
     sequelize,
   });
   return this;
   }
+   static associate(models){
+     this.hasOne(models.Endereco,{foreignKey: 'morada_id'});
+   }
 }

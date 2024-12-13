@@ -2,7 +2,9 @@ import DadosLicenca from "../models/DadosLicenca";
 class DadosLicencaController{
   async store(req, res){
    try{
-    const novoDadoLicenca = await DadosLicenca.create(req.body);
+    const {tecnico, data_da_instalacao, hora_de_formacao, validade_em_mes, data_da_ativacao, data_da_expiracao, estado_da_licenca, conta_pago, valor_pago} = req.body;
+    const {cliente_id} = req.body;
+    const novoDadoLicenca = await DadosLicenca.create({tecnico, data_da_instalacao, hora_de_formacao, validade_em_mes, data_da_ativacao, data_da_expiracao, estado_da_licenca, conta_pago, valor_pago, cliente_id});
     res.json(novoDadoLicenca);
    }catch(e){
     console.log(e);

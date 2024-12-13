@@ -13,3 +13,7 @@ const models = [Cliente, User, Morada, Contatos, DadosLicenca, Responsavel, Ende
 const connection = new Sequelize(databaseConfig);
 
 models.forEach(model => model.init(connection));
+models.forEach((model) => model.associate && model.associate(connection.models));
+// models.forEach((model) => model.associateMorada && model.associateMorada(connection.models));
+
+

@@ -61,9 +61,15 @@ export default class Endereco extends Model{
       ponto_de_referencia: {
         type: Sequelize.STRING,
         defaultValue: '',
+      },
+       cliente_id: {
+        type: Sequelize.INTEGER,
+        defaultValue: ''
       }
     },{
       sequelize,
     });
+    return this
   }
+
 }

@@ -29,6 +29,12 @@ export default class Contatos extends Model {
       web_site: {
         type: Sequelize.STRING,
         defaultValue: '',
+        validate: {
+          len: {
+            args: [1, 10000],
+            msg: 'A coluna cliente_id Não foi inserido nenhum valor'
+          }
+        }
       },
     }, {
     sequelize,

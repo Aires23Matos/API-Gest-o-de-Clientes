@@ -34,7 +34,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      cliente_id: {
+      morada_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {
