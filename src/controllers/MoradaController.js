@@ -3,9 +3,9 @@ import Endereco from "../models/endereco";
 class MoradaController{
   async store(req, res){
    try{
-    const {provicia} = req.body;
+    const {provicia, endereco} = req.body;
     const {cliente_id} = req.body;
-    const novoUsuario = await Morada.create({provicia, cliente_id});
+    const novoUsuario = await Morada.create({provicia, endereco, cliente_id});
     res.json(novoUsuario);
   }catch(e){
     console.log(e);

@@ -38,6 +38,7 @@ export default class Contatos extends Model {
       },
     }, {
     sequelize,
+    timestamps: false,
   });
   return this;
   }

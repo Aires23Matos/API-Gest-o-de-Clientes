@@ -38,7 +38,10 @@ export default class Morada extends Model {
   });
   return this;
   }
-   static associate(models){
-     this.hasOne(models.Endereco,{foreignKey: 'morada_id'});
-   }
+  //  static associate(models){
+  //    this.hasOne(models.Endereco,{foreignKey: 'morada_id'});
+  //  }
 }
+
+
+

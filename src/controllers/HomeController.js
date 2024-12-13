@@ -1,6 +1,6 @@
 import Cliente from "../models/cliente";
 import Responsavel from "../models/Responsavel";
-import Morada from "../models/Morada";
+import Endereco from "../models/endereco";
 import Contatos from "../models/Contatos";
 import DadosLicenca from "../models/DadosLicenca";
 class HomeController{
@@ -16,7 +16,7 @@ class HomeController{
         attributes: ["id", "nome_cliente","nif"],
         order: [['id', 'DESC']],
         include: [{
-          model: Morada,
+          model: Endereco,
         },
         {
           model: Contatos,

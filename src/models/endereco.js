@@ -63,9 +63,15 @@ export default class Endereco extends Model{
         defaultValue: '',
       },
        cliente_id: {
-        type: Sequelize.INTEGER,
-        defaultValue: ''
-      }
+            type: Sequelize.INTEGER,
+            defaultValue: '',
+            validate: {
+            len: {
+              args: [1, 10000],
+              msg: 'A coluna cliente_id Não foi inserido nenhum valor',
+           }
+         }
+       }
     },{
       sequelize,
     });

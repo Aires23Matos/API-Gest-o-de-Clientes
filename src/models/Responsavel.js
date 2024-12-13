@@ -45,6 +45,7 @@ export default class Responsavel extends Model{
        }
     }, {
       sequelize,
+      timestamps: false,
     });
     return this;
   }

@@ -34,11 +34,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      morada_id: {
+      cliente_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {
-          model: 'moradas',
+          model: 'clientes',
           key: 'id',
         },
         onDelete: 'CASCADE',

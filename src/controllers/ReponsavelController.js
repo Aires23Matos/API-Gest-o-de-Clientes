@@ -6,6 +6,7 @@ class ResponsavelController{
       const {nome, telefone, email} = req.body;
       const {cliente_id} = req.body;
       const novoResponsavel = await Responsavel.create({nome, telefone, email, cliente_id});
+
       res.json(novoResponsavel);
     }catch(e){
       console.log(e);
