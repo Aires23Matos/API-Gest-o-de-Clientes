@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 module.exports = {
   dialect: 'mariadb',
   host: "127.0.0.1",
@@ -13,6 +12,5 @@ module.exports = {
     underscoredAll: true,
     createdAt: 'created_at',
     updatedAt: 'updated_at'
-  },
- 
-}
+  }
+};
